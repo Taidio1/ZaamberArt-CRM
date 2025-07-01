@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 220 13% 12%;
+    --foreground: 210 40% 98%;
+    --card: 220 13% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 13% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 220 13% 12%;
+    --secondary: 217.2 32.6% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 20%;
+    --muted-foreground: 215 20.2% 70%;
+    --accent: 217.2 32.6% 20%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 25%;
+    --input: 217.2 32.6% 20%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 55%;
+    --chart-2: 160 60% 50%;
+    --chart-3: 30 80% 60%;
+    --chart-4: 280 65% 65%;
+    --chart-5: 340 75% 60%;
+    --sidebar-background: 220 13% 15%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 13% 18%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 220 13% 22%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for react-big-calendar */
+.rbc-calendar {
+  font-family: inherit;
+}
+
+.rbc-toolbar {
+  @apply mb-4 flex flex-wrap items-center justify-between gap-2;
+}
+
+.rbc-toolbar button {
+  @apply px-3 py-2 text-sm font-medium bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors;
+}
+
+.rbc-toolbar button:active,
+.rbc-toolbar button.rbc-active {
+  @apply bg-blue-600 text-white border-blue-600;
+}
+
+.rbc-toolbar .rbc-btn-group {
+  @apply flex gap-1;
+}
+
+.rbc-toolbar .rbc-btn-group button:first-child {
+  @apply rounded-l-md;
+}
+
+.rbc-toolbar .rbc-btn-group button:last-child {
+  @apply rounded-r-md;
+}
+
+.rbc-toolbar .rbc-btn-group button:not(:first-child):not(:last-child) {
+  @apply rounded-none;
+}
+
+.rbc-header {
+  @apply bg-gray-50 py-2 px-3 text-sm font-semibold text-gray-700 border-b border-gray-200;
+}
+
+.rbc-month-view {
+  @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.rbc-day-bg {
+  @apply border-r border-gray-200;
+}
+
+.rbc-day-bg:last-child {
+  @apply border-r-0;
+}
+
+.rbc-today {
+  @apply bg-blue-50;
+}
+
+.rbc-off-range-bg {
+  @apply bg-gray-50;
+}
+
+.rbc-date-cell {
+  @apply p-2 text-right;
+}
+
+.rbc-date-cell.rbc-now {
+  @apply font-bold text-blue-600;
+}
+
+.rbc-date-cell.rbc-off-range {
+  @apply text-gray-400;
+}
+
+.rbc-event {
+  @apply rounded px-2 py-1 text-xs font-medium border-0 outline-none;
+}
+
+.rbc-event:focus {
+  @apply ring-2 ring-offset-2 ring-blue-500;
+}
+
+.rbc-event.rbc-selected {
+  @apply ring-2 ring-blue-500 ring-offset-1;
+}
+
+.rbc-slot-selection {
+  @apply bg-blue-100 border border-blue-300;
+}
+
+.rbc-time-view {
+  @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.rbc-time-header {
+  @apply border-b border-gray-200;
+}
+
+.rbc-time-content {
+  @apply border-b border-gray-200;
+}
+
+.rbc-timeslot-group {
+  @apply border-b border-gray-100;
+}
+
+.rbc-time-slot {
+  @apply border-r border-gray-200;
+}
+
+.rbc-time-slot:last-child {
+  @apply border-r-0;
+}
+
+.rbc-label {
+  @apply text-xs text-gray-600 px-2;
+}
+
+.rbc-current-time-indicator {
+  @apply bg-red-500 w-full h-0.5 absolute z-10;
+}
+
+.rbc-agenda-view {
+  @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.rbc-agenda-view table {
+  @apply w-full;
+}
+
+.rbc-agenda-view .rbc-agenda-date-cell,
+.rbc-agenda-view .rbc-agenda-time-cell {
+  @apply p-3 border-b border-gray-200 text-sm;
+}
+
+.rbc-agenda-view .rbc-agenda-event-cell {
+  @apply p-3 border-b border-gray-200;
+}
+
+.rbc-show-more {
+  @apply text-blue-600 text-xs font-medium cursor-pointer hover:text-blue-800;
+}
+
+.rbc-popup {
+  @apply bg-white border border-gray-300 rounded-lg shadow-lg p-2 z-50;
+}
+
+.rbc-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-25 z-40;
+}
