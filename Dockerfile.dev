@@ -1,0 +1,23 @@
+# Development Dockerfile dla Next.js z hot reload
+FROM node:20-alpine
+
+# Instalujemy pnpm
+RUN npm install -g pnpm
+
+# Ustawiamy katalog roboczy
+WORKDIR /app
+
+# Kopiujemy package files
+COPY package.json pnpm-lock.yaml ./
+
+# Instalujemy dependencies
+RUN pnpm install
+
+# Kopiujemy kod źródłowy
+COPY . .
+
+# Ekspozycja portu
+EXPOSE 3000
+
+# Uruchamiamy w trybie development
+CMD ["pnpm", "dev"] 
